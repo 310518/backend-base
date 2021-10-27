@@ -60,6 +60,20 @@ const usuariosPost = async (req, res = response) => {
         usuario
     });
 }
+const crear = async (body) => {
+    
+   // const { nombre, correo, password, rol } = body;
+    const usuario = new Usuario({...body});
+    
+    // Encriptar la contraseña 
+    
+
+    // Guardar en BD
+    await usuario.save();
+    console.log("sadasdasda");
+    return usuario;
+   
+}
 
 const usuariosPatch = (req, res = response) => {
     res.json({
@@ -80,7 +94,7 @@ const usuariosDelete = async (req, res = response) => {
 
 
 
-module.exports = {
+module.exports = {crear,
     usuariosGet,
     usuariosPut,
     usuariosPost,
