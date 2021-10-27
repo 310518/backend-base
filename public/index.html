@@ -46,8 +46,7 @@
 
         const body = {id_token: response.credential};
 
-        fetch('http://localhost:8081/api/auth/google',
-        'https://restserver-nuevo.herokuapp.com/api/auth/google',{
+        fetch('https://restserver-nuevo.herokuapp.com/api/auth/google',{
             method: 'POST',
             headers: {
                 'Content-type':'application/json'
