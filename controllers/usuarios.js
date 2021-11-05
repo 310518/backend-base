@@ -31,7 +31,7 @@ const usuariosPut = async (req, res = response) => {
     
     // TODO validar contra base de datos
 
-    if (password) {
+    if (password) { 
         // Encriptar la contraseña 
         const salt = bcryptjs.genSaltSync();
         resto.password = bcryptjs.hashSync(password, salt);
@@ -56,24 +56,24 @@ const usuariosPost = async (req, res = response) => {
     // Guardar en BD
     await usuario.save();
 
-    res.json({
+    res.json({ 
         usuario
     });
 }
-const crear = async (body) => {
+// const crear = async (body) => {
     
-   // const { nombre, correo, password, rol } = body;
-    const usuario = new Usuario({...body});
+//    // const { nombre, correo, password, rol } = body;
+//     const usuario = new Usuario({...body});
     
-    // Encriptar la contraseña 
+//     // Encriptar la contraseña 
     
 
-    // Guardar en BD
-    await usuario.save();
-    console.log("sadasdasda");
-    return usuario;
+//     // Guardar en BD
+//     await usuario.save();
+//     console.log("sadasdasda");
+//     return usuario;
    
-}
+// }
 
 const usuariosPatch = (req, res = response) => {
     res.json({
@@ -94,7 +94,7 @@ const usuariosDelete = async (req, res = response) => {
 
 
 
-module.exports = {crear,
+module.exports = {
     usuariosGet,
     usuariosPut,
     usuariosPost,
